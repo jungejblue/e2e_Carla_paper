@@ -1,0 +1,28 @@
+carla:
+  host: localhost
+  port: 2000
+  timeout_seconds: 20.0
+  synchronous_mode: true
+  fixed_delta_seconds: 0.05
+  traffic_manager_port: 8000
+  traffic_manager_seed: 2026
+
+vehicle:
+  blueprint: vehicle.lincoln.mkz_2020
+
+maps:
+  included:
+    - Town01
+    - Town02
+    - Town03
+    - Town04
+    - Town05
+    - Town06
+    - Town07
+    - Town10HD
+    - Town11
+    - Town12
+  excluded:
+    - Town13
+    - Town15
+

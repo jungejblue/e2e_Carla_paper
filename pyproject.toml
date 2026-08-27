@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "e2e-carla-paper"
+version = "0.1.0"
+description = "Paired closed-loop takeover evaluation for E2E driving in CARLA"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+  "numpy>=1.24,<2.0",
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.6",
+]
+
+[project.scripts]
+e2e-carla-paper = "e2e_carla_paper.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+

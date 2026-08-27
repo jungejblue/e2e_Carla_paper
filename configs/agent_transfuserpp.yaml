@@ -1,0 +1,10 @@
+agent:
+  name: transfuserpp
+  frozen: true
+  checkpoint_env: TRANSFUSERPP_CHECKPOINT
+  garage_root_env: CARLA_GARAGE_ROOT
+
+latency:
+  implementation: fifo_action_buffer
+  levels_ms: [0, 100, 200, 500]
+

@@ -1,0 +1,16 @@
+monitor:
+  signals:
+    - action_age_ms
+    - lateral_error_m
+    - heading_error_rad
+    - predicted_ttlc_s
+  threshold_file: null  # Set after calibration and freeze before the test run.
+
+fallback:
+  name: lane_recovery
+  minimum_active_seconds: 1.0
+
+takeover:
+  hysteresis_enabled: true
+  handback_enabled: false  # Enable only after a dedicated smoke test.
+

@@ -1,0 +1,20 @@
+dependencies:
+  carla:
+    version: "0.9.15"
+    root_env: CARLA_ROOT
+
+  carla_garage:
+    repository: https://github.com/autonomousvision/carla_garage.git
+    branch: leaderboard_2
+    commit: TODO_PIN_BEFORE_EXPERIMENTS
+    root_env: CARLA_GARAGE_ROOT
+
+  transfuserpp:
+    checkpoint_env: TRANSFUSERPP_CHECKPOINT
+    sha256: TODO_RECORD_BEFORE_EXPERIMENTS
+
+  bench2drive_robust:
+    repository: https://github.com/Thinklab-SJTU/Bench2Drive-Robust.git
+    commit: TODO_PIN_IF_CODE_IS_REUSED
+    role: fifo_latency_reference
+

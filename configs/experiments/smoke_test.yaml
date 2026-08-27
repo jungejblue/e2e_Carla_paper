@@ -1,0 +1,13 @@
+experiment:
+  name: town01_smoke_test
+  mode: smoke_test
+
+scenario_manifest: scenarios/manifests/town01_smoke_test.yaml
+
+runtime_config: configs/runtime.yaml
+agent_config: configs/agent_transfuserpp.yaml
+safety_config: configs/safety.yaml
+
+branches:
+  - clean_e2e
+

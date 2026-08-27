@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+
+# Local configuration
+.env
+*.local.yaml
+
+# CARLA / Unreal / external repositories
+CarlaUE4/
+UnrealEngine/
+CARLA*/
+carla_garage/
+scenario_runner/
+leaderboard/
+*.pak
+*.tar.gz
+
+# Models and datasets
+checkpoints/
+data/
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.engine
+
+# Raw experiment outputs
+outputs/
+raw_outputs/
+sensor_data/
+*.mp4
+*.avi
+*.log
+*.parquet
+
+# Local IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
