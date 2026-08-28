@@ -1,0 +1,62 @@
+# Git
+.git/
+.gitignore
+.github/
+
+# Python cache and environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+
+# Local environment files
+.env
+docker/.env
+*.local.yaml
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+
+# Model checkpoints
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.engine
+
+# Data and experiment outputs
+data/
+outputs/
+paper_results/raw/
+*.mp4
+*.avi
+*.mkv
+*.log
+
+# CARLA and Unreal assets
+CarlaUE4/
+UnrealEngine/
+Engine/
+HDMaps/
+Import/
+Dist/
+*.pak
+*.tar
+*.tar.gz
+*.zip
+
+# External repositories accidentally copied into this repo
+carla_garage/
+scenario_runner/
+leaderboard/
+Bench2Drive/
+bench2drive/
