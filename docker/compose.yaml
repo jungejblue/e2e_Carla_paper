@@ -1,0 +1,41 @@
+name: e2e-carla-paper
+
+services:
+  research:
+    image: e2e-carla-paper:dev
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      args:
+        RESEARCH_UID: ${RESEARCH_UID:-1000}
+        RESEARCH_GID: ${RESEARCH_GID:-1000}
+
+    # CARLA server runs on the Ubuntu host at localhost:2000.
+    network_mode: host
+    gpus: all
+    ipc: host
+    shm_size: 16gb
+
+    environment:
+      CARLA_HOST: 127.0.0.1
+      CARLA_PORT: 2000
+      CARLA_ROOT: /external/CARLA
+      CARLA_GARAGE_ROOT: /external/carla_garage
+      SCENARIO_RUNNER_ROOT: /external/carla_garage/scenario_runner
+      LEADERBOARD_ROOT: /external/carla_garage/leaderboard
+      TEAM_CODE_ROOT: /external/carla_garage/team_code
+      TRANSFUSERPP_CHECKPOINT: /external/checkpoint/model_0030_0.pth
+      EXPERIMENT_OUTPUT_ROOT: /outputs
+      PYTHONPATH: /workspace/e2e_Carla_paper/src:/external/CARLA/PythonAPI/carla:/external/carla_garage/scenario_runner:/external/carla_garage/leaderboard:/external/carla_garage/team_code
+
+    volumes:
+      - ..:/workspace/e2e_Carla_paper
+      - ${CARLA_ROOT_HOST_PATH}/PythonAPI:/external/CARLA/PythonAPI:ro
+      - ${CARLA_GARAGE_HOST_PATH}:/external/carla_garage:ro
+      - ${TRANSFUSERPP_CHECKPOINT_HOST_PATH}:/external/checkpoint/model_0030_0.pth:ro
+      - ${EXPERIMENT_OUTPUT_HOST_PATH}:/outputs
+
+    working_dir: /workspace/e2e_Carla_paper
+    stdin_open: true
+    tty: true
+    command: bash
